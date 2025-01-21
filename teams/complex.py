@@ -48,7 +48,7 @@ def player_script(cannon_pos, ball_pos, power_bullet_count, precision_bullet_cou
     # Placeholder logic to calculate shooting parameters
     not_shooting = False  # Set to True if the cannon chooses not to shoot
     if(cannon_x<WIDTH/2):
-        angle = math.degrees(math.atan2(target_y - cannon_y, target_x - cannon_x))
+        angle = 360 - 2*(math.degrees(math.atan2(target_y - cannon_y, target_x - cannon_x)))
     else:
         angle = -math.degrees(math.atan2(target_y - cannon_y, target_x - cannon_x))
 
