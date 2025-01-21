@@ -54,16 +54,28 @@ def player_script(cannon_pos, ball_pos, power_bullet_count, precision_bullet_cou
 
     if(target_x < 300 and cannon_x<WIDTH/2):
         power = 23 # Random power level for the shot
-        bullet_type = "power"
+        if(power_bullet_count !=0):
+            bullet_type = "power"
+        else:
+            bullet_type = "precision"
     elif(target_x > 500 and cannon_x>WIDTH/2): 
         power = 23
-        bullet_type = "power"
+        if(power_bullet_count !=0):
+            bullet_type = "power"
+        else:
+            bullet_type = "precision"
     elif(target_x > 300 and cannon_x<WIDTH/2):
         power = 15
-        bullet_type = "precision"
+        if(precision_bullet_count !=0):
+            bullet_type = "precision"
+        else:
+            bullet_type = "power"
     elif(target_x < 500 and cannon_x>WIDTH/2):
         power = 15
-        bullet_type = "precision"
+        if(precision_bullet_count !=0):
+            bullet_type = "precision"
+        else:
+            bullet_type = "power"
     # Decide whether to shoot or not
     if not_shooting:
         return None  # Do not shoot
